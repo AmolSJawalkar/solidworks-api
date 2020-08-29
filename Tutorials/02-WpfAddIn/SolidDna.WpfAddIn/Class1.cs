@@ -44,7 +44,7 @@ namespace SolidDna.WpfAddIn
         /// <summary>
         /// The Taskpane UI for our plug-in
         /// </summary>
-        private TaskpaneIntegration<MyTaskpaneUI> mTaskpane;
+        private TaskpaneIntegration<HostUserControl> mTaskpane;
 
         #endregion
 
@@ -67,11 +67,10 @@ namespace SolidDna.WpfAddIn
         public override void ConnectedToSolidWorks()
         {
             // Create our taskpane
-            mTaskpane = new TaskpaneIntegration<MyTaskpaneUI>()
+            mTaskpane = new TaskpaneIntegration<HostUserControl>()
             {
-                Icon = Path.Combine(this.AssemblyPath(), "logo-small.bmp"),
-                WpfControl = new MyAddinControl()
-            };
+                Icon = Path.Combine(this.AssemblyPath(), "logo-small.bmp")
+                           };
 
             mTaskpane.AddToTaskpaneAsync();
         }

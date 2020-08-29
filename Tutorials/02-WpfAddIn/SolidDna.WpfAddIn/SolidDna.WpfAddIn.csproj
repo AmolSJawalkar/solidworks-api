@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -85,6 +88,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="HostUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HostUserControl.Designer.cs">
+      <DependentUpon>HostUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyAddinControl.xaml.cs">
       <DependentUpon>MyAddinControl.xaml</DependentUpon>
     </Compile>
